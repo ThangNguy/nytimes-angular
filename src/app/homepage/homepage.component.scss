@@ -1,0 +1,26 @@
+.snippet {
+    display: inline-flex;
+    p {
+      width: 60%;
+    }
+    img {
+      width: 35%;
+      height: 100px;
+    }
+  }
+  
+  .nav {
+    margin-bottom: 40px;
+  }
+  
+  .loading-overlay {
+    background: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,0 +1,31 @@
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col text-center">
+        <img src="../assets/nyt-icon.png">
+      </div>
+    </div>
+  </header>
+  <nav class="mb-3">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+          <input class="form-control" type="search" [(ngModel)]="search" placeholder="Search">
+      </li>
+    </ul>
+  </nav>
+  <div class="row">
+    <div class="col-md-6 card mb-4 box-shadow h-md-250 text-left" *ngFor="let time of times | mySearch: search">
+      <h3 class="mb-0">
+        <a class="text-dark" [href]="time.web_url">{{ trunTitle(time.headline.main) }}</a>
+      </h3>
+      <div class="mb-1 text-muted">{{ time.pub_date | date:'mediumDate' }}</div>
+      <div class="snippet">
+        <p class="card-text mb-auto">
+          {{ truncate(time.snippet) }}
+          <a [href]="time.web_url">Detail</a>
+        </p>
+        <img [src]="time | newImage: time">
+      </div>
+    </div>
+  </div>
+</div>
